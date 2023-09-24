@@ -20,7 +20,7 @@ export const useChatGPT = (prompt) => {
   useEffect(() => {
     const generateResponse = async () => {
       try {
-        const res = fetchGPTResponse(messages)
+        const res = await fetchGPTResponse(messages)
         const data = await res.json();
 
         setResponse(data.choices[0].message.content);
