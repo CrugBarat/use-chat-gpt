@@ -12,7 +12,7 @@ export const useChatGPT = () => {
     },
   ]);
 
-  const generateMore = async (prompt) => {
+  const generateResponse = async (prompt) => {
     setIsLoading(true);
 
     setMessages((messages) => [
@@ -38,6 +38,6 @@ export const useChatGPT = () => {
   return {
     response,
     isLoading,
-    generateMore,
+    generateResponse,
   };
 };
