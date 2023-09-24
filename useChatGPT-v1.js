@@ -16,6 +16,7 @@ export const useChatGPT = (prompt) => {
     },
   ]);
 
+  // for rendering response on first render
   useEffect(() => {
     const generateResponse = async () => {
       try {
@@ -36,6 +37,7 @@ export const useChatGPT = (prompt) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // generates further responses and includes context of conversation
   const generateMore = async () => {
     setIsLoading(true);
 
