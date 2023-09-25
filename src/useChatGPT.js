@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
 import { fetchGPTResponse } from './fetchGPTResponse';
 
-export const useChatGPT = (prompt) => {
+export const useChatGPT = () => {
   const [response, setResponse] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   const [messages, setMessages] = useState([
     {
       role: 'system',
-      content: "You are a..........",
+      content: "You are an AI powered expert in React js.",
     },
     {
       role: 'user',
-      content: prompt,
+      content: "Briefly explain who you are.",
     },
   ]);
 
@@ -20,8 +20,10 @@ export const useChatGPT = (prompt) => {
   useEffect(() => {
     const generateResponse = async () => {
       try {
-        const res = await fetchGPTResponse(messages)
+        const res = await fetchGPTResponse(messages);
         const data = await res.json();
+
+        console.log({res, data})
 
         setResponse(data.choices[0].message.content);
         setMessages((messages) => [...messages, data.choices[0].message]);
@@ -31,9 +33,7 @@ export const useChatGPT = (prompt) => {
       }
     };
 
-    if (prompt) {
-      generateResponse();
-    }
+    generateResponse();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -45,7 +45,7 @@ export const useChatGPT = (prompt) => {
       ...messages,
       {
         role: 'user',
-        content: "Tell me more....",
+        content: "Great. Briefly ell me more about React js.",
       },
     ]);
 

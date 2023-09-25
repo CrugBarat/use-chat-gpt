@@ -3,7 +3,7 @@ export const fetchGPTResponse = async (messages) =>
     method: 'POST',
     body: JSON.stringify({
       messages: messages,
-      temperature: 1.5,
+      temperature: 1,
       max_tokens: 500,
       model: 'gpt-3.5-turbo',
     }),
