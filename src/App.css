@@ -44,6 +44,8 @@
   padding: 12px;
   margin: 8px auto 0 auto;
   width: 90%;
+  max-width: 650px;
   min-height: 200px;
   text-align: left;
+  font-size: 20px;
 }
