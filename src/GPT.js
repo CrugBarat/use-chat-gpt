@@ -7,25 +7,25 @@ export const GPT = () => {
 
   return !isLoading ? (
     <>
-    <div className='gpt-container'>
-      <Typewriter
-        onInit={(typewriter) => {
-          typewriter
-            .changeDelay(15)
-            .typeString(response)
-            .start();
-        }}
-      />
+      <div className='gpt-container'>
+        <Typewriter
+          onInit={(typewriter) => {
+            typewriter
+              .changeDelay(15)
+              .typeString(response)
+              .start();
+          }}
+        />
       </div>
 
-    <div>
-      <button
-        className="App-button"
-        onClick={generateMore}
-      >
-        Tell me more
-      </button>
-    </div>
+      <div>
+        <button
+          className="App-button"
+          onClick={generateMore}
+        >
+          Tell me more
+        </button>
+      </div>
     </>
   ) : (
     <p>
