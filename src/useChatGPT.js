@@ -45,7 +45,7 @@ export const useChatGPT = () => {
       ...messages,
       {
         role: 'user',
-        content: "Great. Briefly ell me more about React js.",
+        content: "Great. Briefly tell me more about React js.",
       },
     ]);
 
