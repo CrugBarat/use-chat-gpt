@@ -18,14 +18,12 @@ export const GPT = () => {
         />
       </div>
 
-      <div>
-        <button
-          className="App-button"
-          onClick={generateMore}
-        >
-          Tell me more
-        </button>
-      </div>
+      <button
+        className="App-button"
+        onClick={generateMore}
+      >
+        Tell me more
+      </button>
     </>
   ) : (
     <p>

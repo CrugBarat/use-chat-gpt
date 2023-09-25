@@ -16,14 +16,11 @@ export const useChatGPT = () => {
     },
   ]);
 
-  // for rendering response on first render
   useEffect(() => {
     const generateResponse = async () => {
       try {
         const res = await fetchGPTResponse(messages);
         const data = await res.json();
-
-        console.log({res, data})
 
         setResponse(data.choices[0].message.content);
         setMessages((messages) => [...messages, data.choices[0].message]);
@@ -34,10 +31,9 @@ export const useChatGPT = () => {
     };
 
     generateResponse();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // generates further responses and includes context of conversation
   const generateMore = async () => {
     setIsLoading(true);
 
