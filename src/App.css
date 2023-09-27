@@ -49,3 +49,11 @@
   text-align: left;
   font-size: 20px;
 }
+
+.api-key-error {
+  font-size: 20px;
+}
+
+.api-key-error-container {
+  max-width: 650px;
+}
